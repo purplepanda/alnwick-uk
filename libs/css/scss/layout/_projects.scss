@@ -1,0 +1,125 @@
+#projects {
+    -webkit-animation: fade-in 2.5s ease;
+    -moz-animation:    fade-in 2.5s ease;
+    -o-animation:      fade-in 2.5s ease;
+    animation:         fade-in 2.5s ease;
+    
+    main {
+        @media only screen and (min-width: $bp-desktop) {
+            max-width: 1100px;
+        }
+    }
+}
+
+.project {
+    border-radius: 1px;
+    overflow: hidden;
+    @include box-shadow(0px 2px 5px 1px rgba(0,0,0,0.25));
+    
+    -webkit-animation: fade-in 2s ease;
+    -moz-animation:    fade-in 2s ease;
+    -o-animation:      fade-in 2s ease;
+    animation:         fade-in 2s ease;
+    margin-bottom: 5%;
+    
+    @media only screen and (min-width: $bp-mobile) {
+        display: flex;
+        align-items: center;
+    }
+
+    &__image {
+        position: relative;
+        transition: all .3s ease;
+
+        @media only screen and (min-width: $bp-mobile) {
+            width: 50%;
+            
+            &:after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background-color: transparent;
+                transition: all .3s ease;
+            }
+        }
+        @media only screen and (min-width: $bp-tablet) {
+            width: 40%;
+        }
+
+        &:before {
+            content: "";
+            @include translateY(-50%, 50%);
+            left: 0;
+            right: 0;
+            color: $white;
+            background-color: transparent;
+            text-align: center;
+            font-family: $fontFontAwesome;
+            font-size: 50px; 
+            transition: all .3s ease;
+        }
+        
+        
+        &:hover, &:focus {
+            &:before {
+                content: "\f04b";
+            }
+            &:after {
+                background-color: $white25;           
+            }
+        }
+    }
+    &__info {
+        padding: 1.5em;
+        
+        @media only screen and (min-width: $bp-mobile) {
+            width: 50%;
+            padding: 1em 1.5em;
+        }
+        @media only screen and (min-width: $bp-tablet) {
+            width: 60%;
+            padding: 1.5em;
+        }
+    }
+
+    &__info-title {
+        font-size: 1em;
+        text-align: left;
+        margin: 0 0 .25em;
+        
+        @media only screen and (min-width: $bp-xsmall) {
+            font-size: 1.25em;
+        }
+        @media only screen and (min-width: $bp-tablet) {
+            font-size: 1.5em;
+        }
+    }
+
+    &__info-location {
+        font-size: .7em;
+        font-style: italic;
+        
+        @media only screen and (min-width: $bp-xsmall) {
+            font-size: .9em;
+        }
+    }
+
+    &__info-description {
+        font-size: .8em;
+        
+        @media only screen and (min-width: $bp-xsmall) {
+            font-size: 1em;
+        }
+        @media only screen and (min-width: $bp-mobile) {
+            font-size: .8em;
+            margin: 0;
+        }
+        @media only screen and (min-width: $bp-tablet) {
+            font-size: 1em;
+            margin: 0 0 1.5em;
+        }
+    }
+}

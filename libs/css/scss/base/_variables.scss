@@ -1,0 +1,28 @@
+/* Color Variables */
+$black:         #000000;
+$greyDarker:    #1A1A1A;
+$greyDark:      #444444;
+$grey:          #B3B3B3;
+$greyLight:     #DCDCDC;
+$greyLightest:  #F3F3F3;
+$white:         #FFFFFF;
+$blueDark:      #003149;
+$blueDark80:    rgba(0,10,20,.8);
+$blue:          rgba(49,133,156,1);
+$rust:          rgba(192,1,1,1);
+$green:         rgba(119,147,60,1);
+
+$white25:       rgba(255,255,255,.25);
+$white50:       rgba(255,255,255,.5);
+$white65:       rgba(255,255,255,.65);
+$white80:       rgba(255,255,255,.80);
+$greyDarker50:  rgba(26,26,26,.5);
+$greyDarker75:  rgba(26,26,26,.75);
+
+
+// Media Query Ranges
+$bp-xsmall: 480px;
+$bp-mobile: 768px;
+$bp-tablet: 992px;
+$bp-desktop: 1200px;
+$bp-xlarge: 1600px;

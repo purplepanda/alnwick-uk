@@ -1,0 +1,272 @@
+html {
+    @include box-sizing(border-box);
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: $fontLatoLight;
+    font-size: 1em;
+    color: $greyDark;
+    overflow-y: auto;
+}
+
+body.modal-open {
+    overflow-y: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $white;
+    @include box-shadow(0px -1px 10px 1px rgba(0,0,0,.25));
+    
+    .modal-open & {
+        background-color: $white;
+    }   
+}
+
+section {
+    padding: 0 0 1.5em;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+h1, 
+h2 {
+    font-family: $fontEBGaramondMedium;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin: 0 0 1em;
+    text-align: center;
+    
+    @media only screen and (min-width: $bp-mobile) {
+        text-align: left;
+    }
+}
+
+h3,
+h4,
+h6 {
+    font-family: $fontEBGaramondMedium;
+    letter-spacing: .025em;
+    margin: 0 0 .5em;
+}
+
+h1 {
+    font-size: 1.75em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.25em;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+h5 {
+    font-size: 1em;
+    font-family: $fontLatoBold;
+    margin: 0 0 1em;
+    letter-spacing: .025em;
+    line-height: 1.2;
+}
+
+h6 {
+    font-size: .75em;
+}
+
+p,
+li {
+    font-size: 1em;
+    font-family: $fontLatoRegular;
+    line-height: 1.4;
+}
+
+p {
+    margin: 0 0 1.5em;
+    text-align: justify;
+}
+
+li {
+    line-height: 2;
+}
+
+ol {
+    margin: 0 1.5em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font-family: $fontLatoRegular;
+}
+
+i {
+    font-style: normal;
+}
+
+.blue {
+    color: $blue;
+}
+.rust {
+    color: $rust;
+}
+.green {
+    color: $green;
+}
+
+
+//icons
+.arrow-down {
+    font-family: $fontFontAwesome;
+    padding-left: 10px;
+
+    &:after {
+        content: "\f107";
+    }
+    
+    .open & {
+        &:after {
+            content: "\f106";
+        }
+    }
+}
+
+.arrow-up {
+    font-family: $fontFontAwesome;
+    padding-left: 10px;
+
+    &:after {
+        content: "\f106";
+    }
+}
+
+// Positioning
+.valign-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+
+// classic clearfix
+.clearfix {
+    clear: both;
+}
+
+.bold {
+    font-family: $fontLatoBold;
+    color: $greyDarker;
+}
+
+a {
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+
+// Dividers
+
+.divider {
+    height: 1px;
+    overflow: hidden;
+    background-color: $greyLight;
+    margin: 5% 20%;
+}
+
+.dividerB {
+    padding: 40vw;
+
+    @media only screen and (min-width: $bp-mobile) {
+        padding: 25vw;
+    }
+}
+
+
+//  Blockquote
+
+blockquote {
+    margin: 20px 0;
+    padding-left: 1.5rem;
+    border-left: 5px solid $grey;
+}
+
+/*******************
+  Utility Classes
+*******************/
+.fade-in {
+  opacity: 0;
+  transform-origin: 0 50%;
+}
+
+.hide {
+  display: none !important;
+}
+
+// Text Align
+.left-align {
+  text-align: left;
+}
+.right-align {
+  text-align: right
+}
+.center, .center-align {
+  text-align: center;
+}
+
+.left {
+  float: left !important;
+}
+.right {
+  float: right !important;
+}
+
+// No Text Select
+.no-select {
+  user-select: none;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.truncate {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.no-padding {
+  padding: 0 !important;
+}

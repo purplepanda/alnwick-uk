@@ -1,0 +1,271 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all .3s ease;
+    padding: 0 5%;
+    height: 60px;
+    
+    @media only screen and (min-width: $bp-mobile) {
+        padding: 1em 5%;
+        height: 100px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    &__logo {
+        width: 175px;
+        
+        @media only screen and (min-width: $bp-mobile) {
+            width: 35%;
+            max-width: 250px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        transition: all .5s cubic-bezier(0.53, 0.01, 0.36, 1.63);
+        justify-content: flex-start;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background-color: $white;
+        height: 0;
+        opacity: 0;
+        z-index: 25;
+        overflow: auto;
+
+        &.show-nav {
+            display: flex;
+            height: calc(100vh - 60px);
+            opacity: 1;
+        }
+        
+        @media only screen and (min-width: $bp-mobile) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            position: relative;
+            top: auto;
+            left: auto;
+            right: auto;
+            height: auto;
+            width: 70%;
+            max-width: 500px;
+            opacity: 1;
+            background-color: transparent;
+            overflow: visible;
+        }
+    }
+    
+    &__list-item {
+        width: 100%;
+        padding: 1.25em 5%;
+        border-bottom: 1px solid $greyLight;     
+        
+        @media only screen and (min-width: $bp-mobile) { 
+            width: auto;
+            padding: 0;
+            border-bottom: 0;
+        }
+    }
+
+    &__list-link {
+        font-size: 16px;
+        color: $greyDark;
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+        font-family: $fontLatoMedium;
+        letter-spacing: .05em;
+        transition: all .3s ease;
+
+        &:hover, &:focus, &.active {
+            color: $greyDark;
+            border-bottom: 2px solid $greyDark;
+            text-decoration: none;
+            outline: 0;
+        }
+    }
+}
+
+.menu-toggle {
+    height: 50px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @media only screen and (min-width: $bp-mobile) {
+        display: none;
+    }
+    
+    .menu-icon {
+        width: 30px;
+        height: 3px;
+        margin: 4px auto;
+        border-radius: 3px;
+        background-color: $greyDark;
+        transition: all .3s ease;
+    }
+    
+    &.open {
+        .menu-icon {
+            width: 35px;
+            
+            &:nth-child(1) {
+                transform: rotate(45deg) translateY(10px) translateX(5px);
+            }
+            &:nth-of-type(2) {
+                background-color: transparent;
+            }
+            &:nth-of-type(3) {
+                transform: rotate(-45deg) translateY(-10px) translateX(5px);
+            }
+        }
+    }
+}
+
+
+.subnav {
+    &__list {
+        display: flex;
+        flex-direction: column;
+        transition: all .5s cubic-bezier(0.53, 0.01, 0.36, 1.63);
+        opacity: 0;
+
+        &.show-subnav {
+            opacity: 1;
+            
+            @media only screen and (min-width: $bp-mobile) {
+                position: absolute;
+                opacity: 1;
+                border: 1px solid $grey;
+                background-color: $white;
+                border-radius: 1px;
+                padding: 1em;
+                margin-top: 1em;
+            }
+        }
+            
+        @media only screen and (min-width: $bp-mobile) {
+            position: absolute;
+            border-radius: 1px;
+            @include box-shadow(0px 2px 5px 1px rgba(0,0,0,0.25));
+        }
+    }
+    &__list-item {
+        transition: all .5s cubic-bezier(0.53, 0.01, 0.36, 1.63);
+        height: 0;
+        opacity: 0;
+        
+        .show-subnav & {
+            height: auto;
+            opacity: 1;
+        }
+        
+        @media only screen and (min-width: $bp-mobile) {
+            height: auto;
+            opacity: 1;
+        }
+    }
+    &__list-link {
+        font-size: 16px;
+        color: $greyDark;
+        text-decoration: none;
+        border-bottom: 1px solid transparent;
+        font-family: $fontLatoLight;
+        letter-spacing: .01em;
+
+        &:hover, &:focus, &.active {
+            color: $greyDark;
+            border-bottom: 1px solid $greyDark;
+            text-decoration: none;
+            outline: 0;
+        }
+    }
+}
+
+.intro-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1em;
+    
+    @media only screen and (min-width: $bp-xsmall) {
+        flex-direction: row;
+        padding-top: 2em;
+    }
+    
+    li {
+        position: relative;
+        margin: 0 1em;
+        color: $grey;
+        text-align: center;
+        line-height: 2em;
+        
+        @media only screen and (min-width: $bp-xsmall) {
+            line-height: normal;
+        }
+        
+        a {
+            font-family: $fontEBGaramondMedium;
+            font-size: .85em;
+            border-bottom: 2px solid transparent;
+            text-transform: uppercase;
+            color: $grey;
+            letter-spacing: .2em;
+            transition: all .3s cubic-bezier(0.53, 0.01, 0.36, 1.63);
+
+            &:hover, &:focus {
+                color: $blueDark;
+                border-bottom: 2px solid $blueDark;
+            }
+        }
+    }
+    
+    li:not(:first-of-type) {
+        @media only screen and (min-width: $bp-xsmall) {
+            &:before {
+                content: "";
+                position: absolute;
+                left: -1em;
+                height: 100%;
+                border-left: 2px solid $grey;
+            }
+        }
+    }
+    
+    &__projects { 
+        @media only screen and (min-width: $bp-xsmall) {
+            flex-direction: column;
+
+            li {
+                line-height: 2.5;
+            }
+
+            li:not(:first-of-type) {
+                &:before {
+                    display: none;
+                }
+            }
+        }
+        
+        @media only screen and (min-width: $bp-mobile) {
+            flex-direction: row;
+            
+            li {
+                line-height: 1.5;
+            }
+
+            li:not(:first-of-type) {
+                &:before {
+                    display: block;
+                }
+            }
+        } 
+    }
+}

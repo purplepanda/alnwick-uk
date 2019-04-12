@@ -1,0 +1,99 @@
+#services {
+    section {
+        background-color: $white;
+        position: relative;
+        z-index: 1;
+    }
+    
+    li {
+        margin: 0 0 1em 1.5em;
+        line-height: normal;
+        text-align: justify;
+        
+        @media only screen and (min-width: $bp-xsmall) {
+            margin: 0 0 1em 2.5em;
+        }
+    }
+    
+    .pullquote {
+        border-left: 5px solid $rust;
+        border-right: 5px solid $rust;
+        padding: 0 1.5em;
+        margin: 1.5em 2.5%;
+        line-height: 1.5;
+        color: $greyDarker;
+        background-color: $white;
+        text-align: justify;
+        
+        @media only screen and (min-width: $bp-xsmall) {
+            font-size: 1.25em;
+            margin: 1.5em 5%;
+        }
+        @media only screen and (min-width: $bp-mobile) { margin: 1.5em 10%; }
+    }
+    
+    .flex {
+        display: flex;
+        justify-content: center;
+        padding-top: 1em;
+        
+        @media only screen and (min-width: $bp-mobile) {
+            margin-bottom: -2em;
+        }
+        
+        > div {
+            margin: 0 1em;
+        }
+        
+        h5 {
+            letter-spacing: 0;
+            
+            @media only screen and (min-width: $bp-xsmall) {
+                font-size: 1.5em;
+            }
+        }
+    }
+    
+    .img-fixed {
+        position: relative;
+        padding: 2em 0;
+        height: 65vw;
+        
+        @media only screen and (min-width: $bp-xsmall) { height: 60vw; }
+        @media only screen and (min-width: $bp-mobile) { height: 55vw; }
+        @media only screen and (min-width: $bp-tablet) { height: 50vw; }
+        @media only screen and (min-width: $bp-desktop) { height: 45vw; }
+    }
+    
+    .img-triangle {
+        position: absolute;
+        left: 0;
+        right: 0;
+    }
+}
+
+.triangle,
+.approach > div,
+.steps { 
+    padding: 1em 0;
+}
+
+.triangle {
+    margin: 0 10%;
+}
+.approach,
+.steps {
+    border: 1px solid $greyLight;
+    background-color: $greyLightest;
+    border-radius: 1px;
+    padding: 10% 5%;
+    margin: 2.5%;
+    @include box-shadow(0px 2px 5px 1px rgba(0,0,0,0.25));
+    
+    @media only screen and (min-width: $bp-xsmall) { margin: 5%; padding: 10%;}
+    @media only screen and (min-width: $bp-mobile) { margin: 5% 10%; padding: 5% 10%;}
+    
+    li {
+        list-style-type: disc;
+    }
+}

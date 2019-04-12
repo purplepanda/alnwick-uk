@@ -1,0 +1,131 @@
+.nav-projects {
+    transition: all .3s ease;
+    
+    @media only screen and (min-width: $bp-xsmall) {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    &__group {
+        border: 1px solid $greyLight;
+        background-color: $greyLightest;
+        border-radius: 1px;
+        padding: 2em 2em 2em 1em;
+        margin: 0 0 1em;
+        @include box-shadow(0px 2px 5px 1px rgba(0,0,0,0.25));
+        
+        @media only screen and (min-width: $bp-mobile) {
+            width: 49%;
+            
+            &.two-column {
+                width: 100%;
+            }
+        }
+    }
+    
+    &__title {
+        text-align: center;
+        margin: 0 0 2em;
+        
+        &-link {
+            font-family: $fontEBGaramondMedium;
+            letter-spacing: .025em;
+            font-size: 1.25em;
+            line-height: 1.5;
+            color: $greyDark;
+            border-bottom: 2px solid transparent;
+            transition: all .3s ease;
+            
+            &:hover, &:focus {
+                color: $blueDark;
+                border-bottom: 2px solid $blueDark;
+            }
+        }
+    }
+    
+    &__list {
+        text-align: left;
+        color: $greyDark;
+        margin-left: 2em;
+    }
+    
+    &__item {
+        position: relative;
+        line-height: 1.5;
+        margin: 0 0 1em;
+        
+        &:before {
+            font-family: $fontFontAwesome;
+            content: "\f111";
+            position: absolute;
+            font-size: 5px;
+            top: 10px;
+            left: -15px;
+        }
+        
+        input[type="checkbox"] {
+            display: none;
+        }
+        
+        input[type="checkbox"] + label {
+            font-family: $fontLatoBold;
+            border-bottom: 1px solid $greyDark;
+            font-size: .85em;
+            letter-spacing: .025em;
+            line-height: 1.2;
+            color: $greyDark;
+            margin: 0 0 1.5em;
+            transition: all .5s ease;
+        }
+        
+        input[type="checkbox"]:checked + label,
+        input[type="checkbox"]:focus + label {
+            color: $blueDark;
+            border-bottom: 1px solid $blueDark;
+        }
+        
+        input[type="checkbox"] ~ .nav-projects__item-description {
+            opacity: 0;
+            height: 0;
+            font-size: .85em;
+            color: $greyDark;
+            margin: 0;
+            transition: all .5s ease;
+        }
+        
+        input[type="checkbox"]:checked ~ .nav-projects__item-description, 
+        input[type="checkbox"]:focus ~ .nav-projects__item-description {
+            opacity: 1;
+            height: auto;
+            padding: .5em 0;
+            margin: 0;
+        }
+    
+        &-link {
+            color: $rust;
+            border-bottom: 1px solid $rust;
+            transition: all .5s ease;
+            
+            &:after {
+                font-family: $fontFontAwesome;
+                content: '\f178';
+                padding-left: 10px;
+                color: inherit;
+            }
+            
+            &:hover, &:focus {
+                color: $blueDark;
+                border-bottom: 1px solid $blueDark;
+            }
+        }
+        
+        &:hover {
+            .nav-projects__item-title {
+                color: $rust;
+                border-bottom: 1px solid $rust;
+            }
+        }
+    }
+}
